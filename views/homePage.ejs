@@ -1,0 +1,35 @@
+<%- include('partials/header', { title: "Dashboard" }) %>
+
+<h1>Welcome, <%= user.username %>!</h1>
+<p>Your role: <%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %></p>
+
+<% if (user.role === "admin") { %>
+<h2>All Registered Users:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function(u) { %>
+    <tr>
+      <td><%= u.id %></td>
+      <td><%= u.username %></td>
+      <td><%= u.email %></td>
+      <td><%= u.role.charAt(0).toUpperCase() + u.role.slice(1) %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<% } else { %>
+<p>This is Sonics dashboard.</p>
+
+<% } %>
+
+<button onclick="window.location.href='/logout'">Logout</button>
+
+<%- include('partials/footer') %>
