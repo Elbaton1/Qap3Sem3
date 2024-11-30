@@ -1,10 +1,9 @@
 <%- include('partials/header', { title: "Dashboard" }) %>
 
 <h1>Welcome, <%= user.username %>!</h1>
-<p>Your role: <%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %></p>
 
 <% if (user.role === "admin") { %>
-<h2>All Registered Users:</h2>
+<h2>&nbspyou the big dog, here are all the registered users:&nbsp&nbsp</h2>
 <table>
   <thead>
     <tr>
@@ -26,7 +25,7 @@
   </tbody>
 </table>
 <% } else { %>
-<p>This is your personal dashboard.</p>
+<p>&nbspHow you doin Bro? This is your personal dashboard.</p>
 
 <% } %>
 
